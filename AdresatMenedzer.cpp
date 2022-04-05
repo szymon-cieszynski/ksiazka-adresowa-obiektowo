@@ -9,7 +9,7 @@ int AdresatMenedzer::dodajAdresata()
 
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata(/*idZalogowanegoUzytkownika, idOstatniegoAdresata*/);
+    adresat = podajDaneNowegoAdresata(/*idZalogowanegoUzytkownika/*, idOstatniegoAdresata*/);
 
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
@@ -24,7 +24,7 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(/*int idZalogowanegoUzytkownika
     int idZalogowanegoUzytkownika = 0;
 
     adresat.ustawIdAdresata(noweIdAdresata) /*= ++idOstatniegoAdresata*/;
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika)/* = idZalogowanegoUzytkownika*/;
+    adresat.ustawIdUzytkownika(UzytkownikMenedzer & idZalogowanegoUzytkownika)/* = idZalogowanegoUzytkownika*/;
 
     cout << "Podaj imie: ";
     //adresat.imie = wczytajLinie();
@@ -79,4 +79,42 @@ void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
     adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 }
 
+void AdresatMenedzer::wyswietlWszystkichAdresatow()
+{
 
+    system("cls");
+    if (!adresaci.empty())
+    {
+        cout << "             >>> ADRESACI <<<" << endl;
+        cout << "-----------------------------------------------" << endl;
+        //for (vector <Adresat> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
+        for (int i = 0; i < adresaci.size(); i++)
+        {
+            //wyswietlDaneAdresata(*itr);
+            wyswietlDaneAdresata(i);
+        }
+        cout << endl;
+    }
+    else
+    {
+        cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
+    }
+    system("pause");
+
+}
+
+void AdresatMenedzer::wyswietlDaneAdresata(int i)
+{
+    cout << endl << "Id:                 " << adresaci[i].pobierzIdAdresata() << endl;
+    cout << "Imie:               " << adresaci[i].pobierzImie() << endl;
+    cout << "Nazwisko:           " << adresaci[i].pobierzNaziwsko() << endl;
+    cout << "Numer telefonu:     " << adresaci[i].pobierzNumerTel() << endl;
+    cout << "Email:              " << adresaci[i].pobierzEmail() << endl;
+    cout << "Adres:              " << adresaci[i].pobierzAdres() << endl;
+    /*cout << endl << "Id:                 " << adresaci[itr].pobierzIdAdresata() << endl;
+    cout << "Imie:               " << adresaci[itr].pobierzImie() << endl;
+    cout << "Nazwisko:           " << adresaci[itr].pobierzNaziwsko() << endl;
+    cout << "Numer telefonu:     " << adresaci[itr].pobierzNumerTel() << endl;
+    cout << "Email:              " << adresaci[itr].pobierzEmail() << endl;
+    cout << "Adres:              " << adresaci[itr].pobierzAdres() << endl;*/
+}

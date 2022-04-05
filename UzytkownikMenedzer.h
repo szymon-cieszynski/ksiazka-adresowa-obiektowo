@@ -25,9 +25,8 @@ private:
     PlikZUzytkownikami plikZUzytkownikami; //tworzymy obiekt i do niego dopisujemy przesylajac mu obiekt uzytkownik (w .cpp)
 
 
-
-
 public:
+    friend class Adresat;
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();

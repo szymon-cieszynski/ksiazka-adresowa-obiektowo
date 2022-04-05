@@ -1,5 +1,10 @@
 #include "PlikZAdresatami.h"
 
+PlikZAdresatami::PlikZAdresatami() //robimy taki konstruktor bo ten przez liste inicjalizacyjna nie dziala
+{
+    nazwaPlikuZAdresatami = "ksiazka.txt";
+}
+
 void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
 {
     string liniaZDanymiAdresata = "";
@@ -55,7 +60,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
 {
     Adresat adresat;
     int idOstatniegoAdresata = 0;
-    int idZalogowanegoUzytkownika = 0;
+    //int idZalogowanegoUzytkownika = 0;
     vector <Adresat> adresaci;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";

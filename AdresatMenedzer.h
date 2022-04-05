@@ -14,17 +14,21 @@ class AdresatMenedzer
 {
 private:
     int idOstatniegoAdresata;
-    int idZalogowanegoUzytkownika;
+    //int idZalogowanegoUzytkownika;
     vector <Adresat> adresaci;
-    Adresat podajDaneNowegoAdresata();
+    Adresat podajDaneNowegoAdresata(/*int idZalogowanegoUzytkownika*/);
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 
     PlikZAdresatami plikZAdresatami;
 
 public:
-    AdresatMenedzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
+    //AdresatMenedzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {}; nie dziala wiec robimy normalnie
     int dodajAdresata();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    void wyswietlWszystkichAdresatow();
+    void wyswietlDaneAdresata(int i);
+    friend class UzytkownikMenedzer;
+    friend class Adresat;
 
 };
 

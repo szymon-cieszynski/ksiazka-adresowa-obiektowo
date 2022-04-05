@@ -98,11 +98,8 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     string login = "", haslo = "";
 
     cout << endl << "Podaj login: ";
-    //login = wczytajLinie();
     cin >> login;
 
-    //vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
-    //while (itr != uzytkownicy.end())
     for (int i = 0; i < uzytkownicy.size(); i++)
     {
         //if (itr -> login == login)
@@ -121,6 +118,7 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                     system("pause");
                     //return itr -> id;
                     idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
+                    //cout<<idZalogowanegoUzytkownika<<endl;
                     return idZalogowanegoUzytkownika;
                 }
             }

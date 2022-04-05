@@ -6,7 +6,6 @@
 #include "AdresatMenedzer.h"
 #include "UzytkownikMenedzer.h"
 
-
 using namespace std;
 
 class KsiazkaAdresowa
@@ -19,12 +18,13 @@ public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami)
     {
         uzytkownikMenedzer.wczytajUzytkownikowZPliku();
+        adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     };      //lista inicjalizacyjna
 
-    KsiazkaAdresowa(string nazwaPlikuZAdresatami) : adresatMenedzer(nazwaPlikuZAdresatami)
+    /*KsiazkaAdresowa(string nazwaPlikuZAdresatami) : adresatMenedzer(nazwaPlikuZAdresatami)
     {
         adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-    };
+    }; nie dziala niestety        */
 
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
@@ -32,6 +32,7 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     void wylogujUzytkownika();
     int dodajAdresata();
+    void wyswietlWszystkichAdresatow();
 
 };
 
