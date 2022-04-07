@@ -10,6 +10,7 @@ class Adresat
 {
     int id;
     int idUzytkownika;
+    int idZalogowanegoUzytkownika;
     string imie, nazwisko, numerTelefonu, email, adres;
 
 public:
@@ -19,7 +20,7 @@ public:
     }*/
     //UzytkownikMenedzer uzytkownikMenedzer;
     void ustawIdAdresata(int noweIdAdresata);
-    void ustawIdUzytkownika(UzytkownikMenedzer & idZalogowanegoUzytkownika);
+    void ustawIdUzytkownika(int noweIdZalogowanegoUzytkownika);
     void wprowadzImie(string noweImie);
     void wprowadzNazwisko(string noweNazwisko);
     void wprowadzNumerTel(string nowyNumer);
@@ -34,7 +35,7 @@ public:
     string pobierzEmail();
     string pobierzAdres();
 
-    friend class AdresatMenedzer;
+    //friend class AdresatMenedzer;
 
 };
 

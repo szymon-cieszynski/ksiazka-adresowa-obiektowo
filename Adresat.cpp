@@ -8,9 +8,9 @@ void Adresat::ustawIdAdresata(int noweIdAdresata)
         id = noweIdAdresata;
 }
 
-void Adresat::ustawIdUzytkownika(UzytkownikMenedzer & idZalogowanegoUzytkownika)
+void Adresat::ustawIdUzytkownika(int noweIdZalogowanegoUzytkownika)
 {
-    idUzytkownika = idZalogowanegoUzytkownika;
+    idUzytkownika = noweIdZalogowanegoUzytkownika;
 }
 
 void Adresat::wprowadzImie(string noweImie)

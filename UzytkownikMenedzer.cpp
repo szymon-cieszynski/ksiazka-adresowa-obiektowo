@@ -118,7 +118,9 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                     system("pause");
                     //return itr -> id;
                     idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
-                    //cout<<idZalogowanegoUzytkownika<<endl;
+                    cout << "Zalogowal sie uzytkownik o ID: "<< idZalogowanegoUzytkownika<<endl;
+                    system("pause");
+
                     return idZalogowanegoUzytkownika;
                 }
             }
@@ -148,12 +150,12 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
         if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika)
         {
             //itr -> haslo = noweHaslo;
-            uzytkownicy[i].pobierzHaslo() = noweHaslo;
+            uzytkownicy[i].ustawHaslo(noweHaslo);
             cout << "Haslo zostalo zmienione." << endl << endl;
             system("pause");
         }
     }
-    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownik);
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
 void UzytkownikMenedzer::wylogujUzytkownika()

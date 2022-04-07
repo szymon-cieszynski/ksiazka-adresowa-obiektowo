@@ -26,7 +26,7 @@ private:
 
 
 public:
-    friend class Adresat;
+    //friend class Adresat;
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();

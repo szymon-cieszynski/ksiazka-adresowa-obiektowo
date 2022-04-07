@@ -19,7 +19,7 @@ class PlikZAdresatami
     //fstream plikTekstowy; przerabiamy na lokalna zmienna
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     bool czyPlikJestPusty(fstream &plikTekstowy);
-    Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
+    Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami, int idZalogowanegoUzytkownika);
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 
@@ -27,7 +27,7 @@ public:
     PlikZAdresatami();
     //PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {}; //konsturktpor + lista inicjalizacyjna bo robimy stala ktora jest nazwa pliku... 38 minuta filmu
     void dopiszAdresataDoPliku(Adresat adresat);
-    vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
 
 };
 

@@ -5,6 +5,13 @@
 
 using namespace std;
 
+KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika()
+{
+    idZalogowanegoUzytkownika = uzytkownikMenedzer.logowanieUzytkownika();
+    return idZalogowanegoUzytkownika;
+    //return uzytkownikMenedzer.logowanieUzytkownika();
+}
+
 void KsiazkaAdresowa::rejestracjaUzytkownika()
 {
     uzytkownikMenedzer.rejestracjaUzytkownika();
@@ -30,9 +37,10 @@ void KsiazkaAdresowa::wylogujUzytkownika()
     uzytkownikMenedzer.wylogujUzytkownika();
 }
 
-int KsiazkaAdresowa::dodajAdresata()
+int KsiazkaAdresowa::dodajAdresata(/*int idZalogowanegoUzytkownika*/)
 {
-    adresatMenedzer.dodajAdresata();
+
+    adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika);
 }
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()

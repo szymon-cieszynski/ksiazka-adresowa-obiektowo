@@ -11,27 +11,27 @@ using namespace std;
 class KsiazkaAdresowa
 {
 private:
+    //int pobierzIdZalogowanegoUzytkownika();
+    int idZalogowanegoUzytkownika;
+
     UzytkownikMenedzer uzytkownikMenedzer;
     AdresatMenedzer adresatMenedzer;
 
 public:
+    int pobierzIdZalogowanegoUzytkownika();
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami)
     {
         uzytkownikMenedzer.wczytajUzytkownikowZPliku();
-        adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+        adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+        //idZalogowanegoUzytkownika = uzytkownikMenedzer.logowanieUzytkownika();
     };      //lista inicjalizacyjna
-
-    /*KsiazkaAdresowa(string nazwaPlikuZAdresatami) : adresatMenedzer(nazwaPlikuZAdresatami)
-    {
-        adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-    }; nie dziala niestety        */
 
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wylogujUzytkownika();
-    int dodajAdresata();
+    int dodajAdresata(/*int idZalogowanegoUzytkownika*/);
     void wyswietlWszystkichAdresatow();
 
 };

@@ -16,19 +16,19 @@ private:
     int idOstatniegoAdresata;
     //int idZalogowanegoUzytkownika;
     vector <Adresat> adresaci;
-    Adresat podajDaneNowegoAdresata(/*int idZalogowanegoUzytkownika*/);
+    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 
     PlikZAdresatami plikZAdresatami;
 
 public:
     //AdresatMenedzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {}; nie dziala wiec robimy normalnie
-    int dodajAdresata();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    int dodajAdresata(int idZalogowanegoUzytkownika);
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void wyswietlWszystkichAdresatow();
     void wyswietlDaneAdresata(int i);
-    friend class UzytkownikMenedzer;
-    friend class Adresat;
+    /*friend class UzytkownikMenedzer;
+    friend class Adresat;*/
 
 };
 

@@ -25,7 +25,7 @@ public:
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
 
-    void zapiszWszystkichUzytkownikowDoPliku(Uzytkownik uzytkownik);
+    void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy);
 };
 
 #endif

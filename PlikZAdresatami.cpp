@@ -1,6 +1,6 @@
 #include "PlikZAdresatami.h"
 
-PlikZAdresatami::PlikZAdresatami() //robimy taki konstruktor bo ten przez liste inicjalizacyjna nie dziala
+PlikZAdresatami::PlikZAdresatami()
 {
     nazwaPlikuZAdresatami = "ksiazka.txt";
 }
@@ -56,7 +56,7 @@ bool PlikZAdresatami::czyPlikJestPusty(fstream &plikTekstowy)
         return false;
 }
 
-vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
     int idOstatniegoAdresata = 0;
@@ -71,9 +71,10 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
         {
-            if(adresat.pobierzIdUzytkownika() == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
+            //if(adresat.pobierzIdUzytkownika() == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
+            if(idZalogowanegoUzytkownika == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
             {
-                adresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
+                adresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami, idZalogowanegoUzytkownika);
                 adresaci.push_back(adresat);
             }
         }
@@ -93,7 +94,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
         return adresaci;
 }
 
-Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami)
+Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami, int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
     string pojedynczaDanaAdresata = "";
