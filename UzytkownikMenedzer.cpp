@@ -14,12 +14,11 @@ void UzytkownikMenedzer::rejestracjaUzytkownika()
     system("pause");
 }
 
-Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika() //usuwamy wektor z nawiasow bo wektor jest czescia tej klasy!!!
+Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika()
 {
     Uzytkownik uzytkownik;
 
-    //uzytkownik.id = pobierzIdNowegoUzytkownika();
-    uzytkownik.ustawId(pobierzIdNowegoUzytkownika()); //piszemy to zamiast tego powyzej
+    uzytkownik.ustawId(pobierzIdNowegoUzytkownika());
 
     string login;
     do
@@ -32,7 +31,7 @@ Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika() //usuwamy wektor z n
 
     string haslo;
     cout << "Podaj haslo: ";
-    //uzytkownik.haslo = wczytajLinie();
+
     cin >> haslo;
     uzytkownik.ustawHaslo(haslo);
 
@@ -50,20 +49,6 @@ int UzytkownikMenedzer::pobierzIdNowegoUzytkownika()
 
 bool UzytkownikMenedzer::czyIstniejeLogin(string login) //rowniez usuwam wektor ale zostawiam login
 {
-    /* zmieniamy bo jest to malo czytelnie zrobione
-    vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
-    while (itr != uzytkownicy.end())
-    {
-        if (itr -> pobierzLogin() == login)
-        {
-            cout << endl << "Istnieje uzytkownik o takim loginie." << endl;
-            return true;
-        }
-        else
-            itr++;
-    }
-    return false;*/
-
     for (int i = 0; i < uzytkownicy.size(); i++)
     {
         if (uzytkownicy[i].pobierzLogin() == login)
@@ -74,8 +59,6 @@ bool UzytkownikMenedzer::czyIstniejeLogin(string login) //rowniez usuwam wektor 
     }
     return false;
 }
-
-
 
 void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
 {
@@ -98,29 +81,25 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     string login = "", haslo = "";
 
     cout << endl << "Podaj login: ";
-    //login = wczytajLinie();
     cin >> login;
 
-    //vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
-    //while (itr != uzytkownicy.end())
     for (int i = 0; i < uzytkownicy.size(); i++)
     {
-        //if (itr -> login == login)
         if (uzytkownicy[i].pobierzLogin() == login)
         {
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-                //haslo = wczytajLinie();
                 cin >> haslo;
 
-                //if (itr -> haslo == haslo)
                 if (uzytkownicy[i].pobierzHaslo() == haslo)
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    //return itr -> id;
                     idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
+                    cout << "Zalogowal sie uzytkownik o ID: "<< idZalogowanegoUzytkownika<<endl;
+                    system("pause");
+
                     return idZalogowanegoUzytkownika;
                 }
             }
@@ -128,7 +107,6 @@ int UzytkownikMenedzer::logowanieUzytkownika()
             system("pause");
             return 0;
         }
-        //itr++;
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
@@ -140,7 +118,6 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
     Uzytkownik uzytkownik;
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
-    //noweHaslo = wczytajLinie();
     cin >> noweHaslo;
 
     //for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
@@ -150,17 +127,17 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
         if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika)
         {
             //itr -> haslo = noweHaslo;
-            uzytkownicy[i].pobierzHaslo() = noweHaslo;
+            uzytkownicy[i].ustawHaslo(noweHaslo);
             cout << "Haslo zostalo zmienione." << endl << endl;
             system("pause");
         }
     }
-    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownik);
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
 void UzytkownikMenedzer::wylogujUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
-//    adresaci.clear();
+    //adresaci.clear();
 }
 

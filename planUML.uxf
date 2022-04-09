@@ -26,7 +26,7 @@
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
-
+- idZalogowanegoUzytkownika : Integer
 - UzytkownikMenedzer : uzytkownikMenedzer
 --
 + rejestracjaUzytkownika() : void
@@ -35,6 +35,7 @@
 + wylogowanieUzytkownika() : void
 + dodajAdresata() : int
 &lt;&lt;construct&gt;&gt; KsiazkaAdresowa()
++ wyswietlWszystkichAdresatow() : void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -55,7 +56,7 @@
 + logowanieUzytkownika () : Integer
 + wypiszWszystkichUzytkownikow : void
 + wczytajUzytkownikowZPliku() : void
-+ wylogowanieUzytkownika() : void
++ wylogujUzytkownika() : void
 - podajDaneNowegoUzytkownika() :  Uzytkownik
 - pobierzIdNowegoUzytkownika : Integer
 - czyIstniejeLogin() : Bool
@@ -127,7 +128,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>520</x>
-      <y>380</y>
+      <y>390</y>
       <w>440</w>
       <h>190</h>
     </coordinates>
@@ -141,6 +142,8 @@
 - zamienPierwszaLitereNaDuzaAPozostaleNaMale() : string
 + dodajAdresata() : int
 + wczytajAdresatowZalogowanegoUzytkownikaZPliku : void
++ wyswietlWszystkichAdresatow() : void
++ wyswietlDaneAdresata() : void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -150,19 +153,22 @@
       <x>620</x>
       <y>160</y>
       <w>500</w>
-      <h>190</h>
+      <h>220</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
 - nazwaPlikuZAdresatami : string
 --
+&lt;&lt;construct&gt;&gt; PlikZAdresatami()
 - zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : String
 - czyPlikJestPusty() : bool
-- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami " int
-- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami " int
-- pobierzDaneAdresata : Adresat
+- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : int
+- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : int
+- pobierzDaneAdresata() : Adresat
+- pobierzOstatnieIdAdresata() : Integer
 + dopiszAdresataDoPliku() : void
-&lt;&lt;construct&gt;&gt; PlikZAdresatami()</panel_attributes>
+&lt;&lt;construct&gt;&gt; PlikZAdresatami()
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku() vector &lt;Adresaci&gt;</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

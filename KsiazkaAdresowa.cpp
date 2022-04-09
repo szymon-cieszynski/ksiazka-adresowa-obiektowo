@@ -5,6 +5,13 @@
 
 using namespace std;
 
+/*KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika()
+{
+    idZalogowanegoUzytkownika = uzytkownikMenedzer.logowanieUzytkownika();
+    return idZalogowanegoUzytkownika;
+    //return uzytkownikMenedzer.logowanieUzytkownika();
+}*/
+
 void KsiazkaAdresowa::rejestracjaUzytkownika()
 {
     uzytkownikMenedzer.rejestracjaUzytkownika();
@@ -17,7 +24,7 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 
 int KsiazkaAdresowa::logowanieUzytkownika()
 {
-    uzytkownikMenedzer.logowanieUzytkownika();
+    idZalogowanegoUzytkownika = uzytkownikMenedzer.logowanieUzytkownika();
 }
 
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
@@ -32,9 +39,19 @@ void KsiazkaAdresowa::wylogujUzytkownika()
 
 int KsiazkaAdresowa::dodajAdresata()
 {
-    adresatMenedzer.dodajAdresata();
+
+    adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika);
 }
 
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
+{
+    adresatMenedzer.wyswietlWszystkichAdresatow();
+}
+
+void KsiazkaAdresowa::wczytajAdresatow()
+{
+    adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+}
 
 
 

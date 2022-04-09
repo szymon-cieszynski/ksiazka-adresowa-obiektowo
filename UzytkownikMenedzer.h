@@ -8,26 +8,25 @@
 #include <sstream>
 
 #include "Uzytkownik.h"
-#include "PlikZUzytkownikami.h" //zeby dodawanie do pliku dzialalo
+#include "PlikZUzytkownikami.h"
 
 using namespace std;
 
 class UzytkownikMenedzer
 {
 private:
-    int idZalogowanegoUzytkownika; //usuwamy rownanie do zera
-    vector <Uzytkownik> uzytkownicy; //wektor grobalnie wiec w .cpp sobie go uzywa
+    int idZalogowanegoUzytkownika;
+    vector <Uzytkownik> uzytkownicy;
 
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
 
-    PlikZUzytkownikami plikZUzytkownikami; //tworzymy obiekt i do niego dopisujemy przesylajac mu obiekt uzytkownik (w .cpp)
-
-
+    PlikZUzytkownikami plikZUzytkownikami;
 
 
 public:
+    //friend class Adresat;
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();

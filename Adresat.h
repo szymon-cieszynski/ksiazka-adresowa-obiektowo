@@ -2,17 +2,20 @@
 #define ADRESAT_H
 #include <iostream>
 
+#include "UzytkownikMenedzer.h"
+
 using namespace std;
 
 class Adresat
 {
     int id;
     int idUzytkownika;
+    int idZalogowanegoUzytkownika;
     string imie, nazwisko, numerTelefonu, email, adres;
 
 public:
     void ustawIdAdresata(int noweIdAdresata);
-    void ustawIdUzytkownika(int idZalogowanegoUzytkownika);
+    void ustawIdUzytkownika(int noweIdZalogowanegoUzytkownika);
     void wprowadzImie(string noweImie);
     void wprowadzNazwisko(string noweNazwisko);
     void wprowadzNumerTel(string nowyNumer);

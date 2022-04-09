@@ -14,17 +14,19 @@ class AdresatMenedzer
 {
 private:
     int idOstatniegoAdresata;
-    int idZalogowanegoUzytkownika;
+
     vector <Adresat> adresaci;
-    Adresat podajDaneNowegoAdresata();
+    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 
     PlikZAdresatami plikZAdresatami;
 
 public:
-    AdresatMenedzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
-    int dodajAdresata();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    //AdresatMenedzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {}; nie dziala
+    void dodajAdresata(int idZalogowanegoUzytkownika);
+    void wyswietlWszystkichAdresatow();
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    //void wyswietlDaneAdresata(int i);
 
 };
 
