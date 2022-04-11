@@ -90,7 +90,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
         cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
 
     plikTekstowy1.close();
-    return adresaci;
+    //return adresaci;
 
     if (daneOstaniegoAdresataWPliku != "")
     {
@@ -100,6 +100,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
         system("pause");
         //return adresaci;
     }
+    return adresaci;
 }
 
 Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami)
@@ -164,5 +165,6 @@ int PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(strin
 
 int PlikZAdresatami::pobierzOstatnieIdAdresata()
 {
+    //idOstatniegoAdresata = idAdresata;
     return ++idOstatniegoAdresata;
 }

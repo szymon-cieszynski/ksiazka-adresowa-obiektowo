@@ -27,6 +27,7 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
     int noweIdAdresata = 0;
 
     noweIdAdresata =  plikZAdresatami.pobierzOstatnieIdAdresata();
+
     adresat.ustawIdAdresata(noweIdAdresata);
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 

@@ -10,7 +10,6 @@ int main()
     ksiazkaAdresowa.rejestracjaUzytkownika();
 
     ksiazkaAdresowa.logowanieUzytkownika();
-    ksiazkaAdresowa.wczytajAdresatow();
     ksiazkaAdresowa.dodajAdresata();
     ksiazkaAdresowa.dodajAdresata();
 

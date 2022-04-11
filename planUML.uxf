@@ -22,7 +22,7 @@
       <x>0</x>
       <y>670</y>
       <w>530</w>
-      <h>180</h>
+      <h>200</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
@@ -165,7 +165,7 @@
 - pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : int
 - pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : int
 - pobierzDaneAdresata() : Adresat
-- pobierzOstatnieIdAdresata() : Integer
++ pobierzOstatnieIdAdresata() : Integer
 + dopiszAdresataDoPliku() : void
 &lt;&lt;construct&gt;&gt; PlikZAdresatami()
 + wczytajAdresatowZalogowanegoUzytkownikaZPliku() vector &lt;Adresaci&gt;</panel_attributes>

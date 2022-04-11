@@ -23,7 +23,6 @@ public:
         uzytkownikMenedzer.wczytajUzytkownikowZPliku();
     };      //lista inicjalizacyjna
 
-    void wczytajAdresatow();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     int logowanieUzytkownika();
