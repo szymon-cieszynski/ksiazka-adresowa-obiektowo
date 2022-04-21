@@ -13,7 +13,7 @@ using namespace std;
 
 class PlikZUzytkownikami
 {
-    const string nazwaPlikuZUzytkownikami; //musimy utworzyc kontruktor zeby mu przypisac nazwe Uzytkownicy.txt!!!!
+    const string NAZWA_PLIKU_Z_UZYTKOWNIKAMI; //musimy utworzyc kontruktor zeby mu przypisac nazwe Uzytkownicy.txt!!!!
     //fstream plikTekstowy; przerabiamy na lokalna zmienna
 
     bool czyPlikJestPusty(fstream &plikTekstowy);
@@ -21,7 +21,7 @@ class PlikZUzytkownikami
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
 public:
-    PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : nazwaPlikuZUzytkownikami(NAZWAPLIKUZUZYTKOWNIKAMI) {}; //konsturktpor + lista inicjalizacyjna-stala ktora jest nazwa pliku... 38 minuta filmu
+    PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : NAZWA_PLIKU_Z_UZYTKOWNIKAMI(NAZWAPLIKUZUZYTKOWNIKAMI) {}; //konsturktpor + lista inicjalizacyjna-stala ktora jest nazwa pliku... 38 minuta filmu
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
 

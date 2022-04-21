@@ -8,32 +8,32 @@ void Adresat::ustawIdAdresata(int noweIdAdresata)
         id = noweIdAdresata;
 }
 
-void Adresat::ustawIdUzytkownika(int noweIdZalogowanegoUzytkownika)
+void Adresat::ustawIdUzytkownika(int noweIdUzytkownika)
 {
-    idUzytkownika = noweIdZalogowanegoUzytkownika;
+    idUzytkownika = noweIdUzytkownika;
 }
 
-void Adresat::wprowadzImie(string noweImie)
+void Adresat::ustawImie(string noweImie)
 {
     imie = noweImie;
 }
 
-void Adresat::wprowadzNazwisko(string noweNazwisko)
+void Adresat::ustawNazwisko(string noweNazwisko)
 {
     nazwisko = noweNazwisko;
 }
 
-void Adresat::wprowadzNumerTel(string nowyNumer)
+void Adresat::ustawNumerTel(string nowyNumer)
 {
     numerTelefonu = nowyNumer;
 }
 
-void Adresat::wprowadzEmail(string nowyEmail)
+void Adresat::ustawEmail(string nowyEmail)
 {
     email = nowyEmail;
 }
 
-void Adresat::wprowadzAdres(string nowyAdres)
+void Adresat::ustawAdres(string nowyAdres)
 {
     adres = nowyAdres;
 }
@@ -53,7 +53,7 @@ string Adresat::pobierzImie()
     return imie;
 }
 
-string Adresat::pobierzNaziwsko()
+string Adresat::pobierzNazwisko()
 {
     return nazwisko;
 }

@@ -8,24 +8,41 @@
 
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
+#include "MetodyPomocnicze.h"
 
 using namespace std;
 class AdresatMenedzer
 {
 private:
-    int idOstatniegoAdresata;
+    //int idOstatniegoAdresata;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 
     vector <Adresat> adresaci;
-    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
-    string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    void wyswietlDaneAdresata(Adresat adresat);
+    Adresat podajDaneNowegoAdresata();
+    int podajIdWybranegoAdresata();
+    char wybierzOpcjeZMenuEdycja();
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
+    //string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskam(Adresat adresat);
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 
     PlikZAdresatami plikZAdresatami;
 
 public:
-    //AdresatMenedzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {}; nie dziala
-    void dodajAdresata(int idZalogowanegoUzytkownika);
+    AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) //odbieramy idZalogowanego i przypisujemy do stalej
+        : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
+    {
+        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    };
+    void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    char wybierzOpcjeZMenuUzytkownika();
+    int usunAdresata();
+    void edytujAdresata();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
+
+    //void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika); //wyzej to tworzymy zamiast tu i w .cpp
     //void wyswietlDaneAdresata(int i);
 
 };
