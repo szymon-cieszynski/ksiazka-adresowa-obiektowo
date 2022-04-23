@@ -2,7 +2,14 @@
 
 using namespace std;
 
-/*bool PlikTekstowy::czyPlikJestPusty()
+
+string PlikTekstowy::pobierzNazwePliku()
+{
+    return NAZWA_PLIKU;
+}
+
+
+bool PlikTekstowy::czyPlikJestPusty()
 {
     bool pusty = true;
     fstream plikTekstowy;
@@ -17,4 +24,4 @@ using namespace std;
 
     plikTekstowy.close();
     return pusty;
-}*/
+}

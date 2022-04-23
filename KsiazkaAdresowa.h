@@ -5,6 +5,7 @@
 
 #include "AdresatMenedzer.h"
 #include "UzytkownikMenedzer.h"
+#include "PlikTekstowy.h"
 
 using namespace std;
 
@@ -14,7 +15,6 @@ private:
     int idZalogowanegoUzytkownika = 0;
 
     UzytkownikMenedzer uzytkownikMenedzer;
-    //PlikZAdresatami plikZAdresatami;
 
     AdresatMenedzer *adresatMenedzer; //na wskaznikach bedzie optymalniej
     const string NAZWA_PLIKU_Z_ADRESATAMI;

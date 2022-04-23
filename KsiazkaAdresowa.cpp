@@ -5,13 +5,6 @@
 
 using namespace std;
 
-/*KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika()
-{
-    idZalogowanegoUzytkownika = uzytkownikMenedzer.logowanieUzytkownika();
-    return idZalogowanegoUzytkownika;
-    //return uzytkownikMenedzer.logowanieUzytkownika();
-}*/
-
 void KsiazkaAdresowa::rejestracjaUzytkownika()
 {
     uzytkownikMenedzer.rejestracjaUzytkownika();

@@ -8,20 +8,21 @@
 
 #include "Uzytkownik.h"
 #include "MetodyPomocnicze.h" //zeby dzialala konwersja ktora tam jest zaimpletowana
+#include "PlikTekstowy.h"
 
 using namespace std;
 
-class PlikZUzytkownikami
+class PlikZUzytkownikami : public PlikTekstowy
 {
-    const string NAZWA_PLIKU_Z_UZYTKOWNIKAMI; //musimy utworzyc kontruktor zeby mu przypisac nazwe Uzytkownicy.txt!!!!
-    //fstream plikTekstowy; przerabiamy na lokalna zmienna
+    //const string NAZWA_PLIKU_Z_UZYTKOWNIKAMI; //musimy utworzyc kontruktor zeby mu przypisac nazwe Uzytkownicy.txt!!!!
 
-    bool czyPlikJestPusty(fstream &plikTekstowy);
+    //bool czyPlikJestPusty(fstream &plikTekstowy);
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
 public:
-    PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : NAZWA_PLIKU_Z_UZYTKOWNIKAMI(NAZWAPLIKUZUZYTKOWNIKAMI) {}; //konsturktpor + lista inicjalizacyjna-stala ktora jest nazwa pliku... 38 minuta filmu
+    PlikZUzytkownikami(string nazwaPliku) : PlikTekstowy(nazwaPliku) {};
+    //PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : NAZWA_PLIKU_Z_UZYTKOWNIKAMI(NAZWAPLIKUZUZYTKOWNIKAMI) {}; //konsturktpor + lista inicjalizacyjna-stala ktora jest nazwa pliku... 38 minuta filmu
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
 

@@ -10,7 +10,7 @@ void AdresatMenedzer::dodajAdresata()
     system("cls");
 
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata(/*idZalogowanegoUzytkownika*/);
+    adresat = podajDaneNowegoAdresata();
 
     adresaci.push_back(adresat);
     if (plikZAdresatami.dopiszAdresataDoPliku(adresat))
@@ -25,7 +25,7 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata()
     Adresat adresat;
     int noweIdAdresata = 0;
 
-    noweIdAdresata =  plikZAdresatami.pobierzOstatnieIdAdresata() + 1;
+    noweIdAdresata =  plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata() + 1;
 
     adresat.ustawIdAdresata(noweIdAdresata);
     adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
