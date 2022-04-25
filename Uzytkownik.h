@@ -11,7 +11,7 @@ class Uzytkownik
     string login;
     string haslo;
 
-public: //gettery i settery???? w pliku .cpp sa ustawione zeby inne metody mogly ustawiac te wartosci ktore sa wyzej prywatne!!
+public:
     void ustawId(int noweId);
     void ustawLogin(string nowyLogin);
     void ustawHaslo(string noweHaslo);

@@ -13,9 +13,8 @@ class Adresat
     string imie, nazwisko, numerTelefonu, email, adres;
 
 public:
-    //zeby reszta programu dzialala dobrze to przypisujemy wartosci domyslne, po to by jak ktos ich nie wysle przez konstruktor byly one domyslne!! 30 minuta filmu
     Adresat(int id = 0, int idUzytkownika = 0, string imie = "", string nazwisko = "", string numerTelefonu = "", string email = "", string adres = "")
-    { //this powoduje ze nie musimy wymyslac nowych nazw tylko dajemy te same i przyrownujemy stare do "nowych" i w konstruktorze przy testach w main po prostu przesylamy standardowo
+    {
         this -> id = id;
         this -> idUzytkownika = idUzytkownika;
         this -> imie = imie;
@@ -24,8 +23,6 @@ public:
         this -> email = email;
         this -> adres = adres;
     }
-
-
     void ustawIdAdresata(int noweIdAdresata);
     void ustawIdUzytkownika(int noweIdZalogowanegoUzytkownika);
     void ustawImie(string noweImie);

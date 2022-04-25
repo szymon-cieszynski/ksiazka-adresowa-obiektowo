@@ -1,3 +1,5 @@
+//Ksiazka adresowo - implementacja obiektowa
+//Address book - OOP implementation
 #include <iostream>
 #include "KsiazkaAdresowa.h"
 
@@ -5,19 +7,14 @@ using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "ksiazka.txt");
-    //KsiazkaAdresowa KsiazkaAdresowa;
-
-    //PlikZAdresatami plikZAdresatami("ksiazka.txt");
-    // plikZAdresatami.dopisz("tekst do dopisania");
-
-   // PlikZUzytkownikami plikZUzytkownikami("Uzytkownicy.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "KsiazkaAdresowa.txt");
 
     while (true)
     {
         if (!ksiazkaAdresowa.czyUzytkownikJestZalogowany())
         {
-            char wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
+            char wybor;
+            wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
 
             switch (wybor)
             {
@@ -38,7 +35,8 @@ int main()
         }
         else
         {
-            char wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
+            char wybor;
+            wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
             {
@@ -58,59 +56,16 @@ int main()
                 ksiazkaAdresowa.usunAdresata();
                 break;
             case '6':
-                //edytujAdresata(adresaci);
                 ksiazkaAdresowa.edytujAdresata();
                 break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '8':
-                /*idZalogowanegoUzytkownika = 0;
-                adresaci.clear();*/
                 ksiazkaAdresowa.wylogujUzytkownika();
                 break;
             }
         }
     }
-
-
-    /*ksiazkaAdresowa.dodajAdresata();
-    ksiazkaAdresowa.dodajAdresata();
-    ksiazkaAdresowa.dodajAdresata();
-
-    //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
-
-    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
-    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();*/
-
-
-    //ksiazkaAdresowa.wylogujUzytkownika();
-
     return 0;
 }
-
-//testy tylko dla metod publicznych w poszczegolnych klasach!!!
-//TESTY AdresatMenedzer
-#include "AdresatMenedzer.h"
-
-/*int testAdresatMenedzer_main()
-{
-    AdresatMenedzer adresatMenedzer("ksiazka.txt", 1);
-    adresatMenedzer.wyswietlWszystkichAdresatow();
-    adresatMenedzer.dodajAdresata();
-    adresatMenedzer.wyswietlWszystkichAdresatow();
-}*/
-
-//TESTY PlikZAdresatami
-#include "Adresat.h"
-#include "PlikZAdresatami.h"
-
-/*int testPlikZAdresatami_main()
-{
-    PlikZAdresatami plikZAdresatami("Adresaci-test.txt");
-    Adresat adresat(666,666,"Romuald","Dzikowski","0700 666 555","romek#wp.pl","Spychalskiego 5b");
-
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
-
-    cout << plikZAdresatami.pobierzOstatnieIdAdresata();
-}*/

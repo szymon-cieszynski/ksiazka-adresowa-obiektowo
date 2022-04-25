@@ -16,16 +16,16 @@ private:
 
     UzytkownikMenedzer uzytkownikMenedzer;
 
-    AdresatMenedzer *adresatMenedzer; //na wskaznikach bedzie optymalniej
+    AdresatMenedzer *adresatMenedzer;
     const string NAZWA_PLIKU_Z_ADRESATAMI;
 
 public:
     int pobierzIdZalogowanegoUzytkownika();
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
     {
-        adresatMenedzer = NULL; //ustawiamy na null ZEBY NIE WSkazywal na jakies miejsce w pamieci i przy delete bysmy mogli usunac wazna informacje
-    };      //lista inicjalizacyjna
-    ~KsiazkaAdresowa() //destruktor
+        adresatMenedzer = NULL;
+    };
+    ~KsiazkaAdresowa()
     {
         delete adresatMenedzer;
         adresatMenedzer = NULL;
@@ -45,8 +45,6 @@ public:
     void edytujAdresata();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
-    //void dopisz();
-
 };
 
 #endif

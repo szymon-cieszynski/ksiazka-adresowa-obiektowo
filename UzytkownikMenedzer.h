@@ -6,7 +6,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-
+#include <windows.h>
 #include "Uzytkownik.h"
 #include "PlikZUzytkownikami.h"
 
@@ -29,7 +29,7 @@ public:
     UzytkownikMenedzer(string NAZWA_PLIKU_Z_UZYTKOWNIKAMI) : plikZUzytkownikami(NAZWA_PLIKU_Z_UZYTKOWNIKAMI)
     {
         idZalogowanegoUzytkownika = 0;
-        uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku(); //przenosimy tutaj z KsiazkaAdresowa a w .cpp usuwamy
+        uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
     };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();

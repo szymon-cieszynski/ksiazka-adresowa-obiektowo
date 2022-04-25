@@ -17,12 +17,10 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 
 int KsiazkaAdresowa::logowanieUzytkownika()
 {
-    //idZalogowanegoUzytkownika = uzytkownikMenedzer.logowanieUzytkownika();
     uzytkownikMenedzer.logowanieUzytkownika();
     if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
     {
-        adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika()); //dopiero tu tworzymy obiekt klasy AdresatMenedzer i wysylamu mu nazwe i idZalogowanego
-        //adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+        adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
     }
 }
 
@@ -42,7 +40,7 @@ int KsiazkaAdresowa::dodajAdresata()
 {
     if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
     {
-        adresatMenedzer->dodajAdresata(); //pracujemy na wskazniku wiec uzywamy strzalki
+        adresatMenedzer->dodajAdresata();
     }
     else
     {
@@ -55,7 +53,7 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
     if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
     {
-        adresatMenedzer->wyswietlWszystkichAdresatow(); //pracujemy na wskazniku wiec uzywamy strzalki
+        adresatMenedzer->wyswietlWszystkichAdresatow();
     }
     else
     {
@@ -98,8 +96,3 @@ void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
 {
     adresatMenedzer->wyszukajAdresatowPoNazwisku();
 }
-
-/*void KsiazkaAdresowa::dopisz()
-{
-    PlikZAdresatami.dopisz();
-}*/

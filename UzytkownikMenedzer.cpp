@@ -43,11 +43,10 @@ int UzytkownikMenedzer::pobierzIdNowegoUzytkownika()
     if (uzytkownicy.empty() == true)
         return 1;
     else
-        //return uzytkownicy.back().id + 1; tu znowu byl blad ze prywatny
         return uzytkownicy.back().pobierzId() + 1;
 }
 
-bool UzytkownikMenedzer::czyIstniejeLogin(string login) //rowniez usuwam wektor ale zostawiam login
+bool UzytkownikMenedzer::czyIstniejeLogin(string login)
 {
     for (int i = 0; i < uzytkownicy.size(); i++)
     {
@@ -70,11 +69,6 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
     }
 }
 
-/*void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}*/
-
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
@@ -94,12 +88,9 @@ int UzytkownikMenedzer::logowanieUzytkownika()
 
                 if (uzytkownicy[i].pobierzHaslo() == haslo)
                 {
-                    cout << endl << "Zalogowales sie." << endl << endl;
-                    system("pause");
+                    cout << endl << "Logowanie udane." << endl << endl;
+                    Sleep(1500);
                     idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
-                    /*cout << "Zalogowal sie uzytkownik o ID: "<< idZalogowanegoUzytkownika<<endl;
-                    system("pause");*/
-
                     return idZalogowanegoUzytkownika;
                 }
             }
@@ -121,13 +112,10 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
     cout << "Podaj nowe haslo: ";
     cin >> noweHaslo;
 
-    //for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
     for (int i = 0; i < uzytkownicy.size(); i++)
     {
-        //if (itr -> id == idZalogowanegoUzytkownika)
         if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika)
         {
-            //itr -> haslo = noweHaslo;
             uzytkownicy[i].ustawHaslo(noweHaslo);
             cout << "Haslo zostalo zmienione." << endl << endl;
             system("pause");

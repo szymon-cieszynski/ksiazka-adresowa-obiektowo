@@ -44,6 +44,7 @@ string MetodyPomocnicze::wczytajLinie()
 
 char MetodyPomocnicze::wczytajZnak()
 {
+    cin.sync();
     string wejscie = "";
     char znak  = {0};
 

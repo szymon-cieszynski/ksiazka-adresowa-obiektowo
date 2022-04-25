@@ -1,10 +1,5 @@
 #include "PlikZAdresatami.h"
 
-/*PlikZAdresatami::PlikZAdresatami()
-{
-    nazwaPlikuZAdresatami = "ksiazka.txt";
-}*/
-
 bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
 {
     string liniaZDanymiAdresata = "";
@@ -15,7 +10,7 @@ bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
     {
         liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
 
-        if (PlikTekstowy::czyPlikJestPusty(/*plikTekstowy*/) == true)
+        if (PlikTekstowy::czyPlikJestPusty() == true)
         {
             plikTekstowy << liniaZDanymiAdresata;
         }
@@ -27,16 +22,7 @@ bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
         plikTekstowy.close();
         return true;
     }
-
     return false;
-
-    /*++idOstatniegoAdresata;
-    cout<< "Aktualne ID Ostatniego Adresata w pliku to: " << idOstatniegoAdresata << endl;
-    system("pause");
-
-    return idOstatniegoAdresata;*/
-
-
 }
 
 string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat)
@@ -53,15 +39,6 @@ string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKre
 
     return liniaZDanymiAdresata;
 }
-
-/*bool PlikZAdresatami::czyPlikJestPusty(fstream &plikTekstowy)
-{
-    plikTekstowy.seekg(0, ios::end);
-    if (plikTekstowy.tellg() == 0)
-        return true;
-    else
-        return false;
-}*/
 
 vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
 {
@@ -86,15 +63,15 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
         plikTekstowy.close();
     }
     else
+    {
         cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
         system("pause");
+    }
+
 
     if (daneOstaniegoAdresataWPliku != "")
     {
         idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
-
-        /*cout<< "ID Ostatniego Adresata w pliku to: " << idOstatniegoAdresata << endl;
-        system("pause");*/
     }
     return adresaci;
 }
@@ -222,7 +199,6 @@ void PlikZAdresatami::edytujWybranegoAdresataWPliku(Adresat adresat, string lini
         {
             if (pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(liniaZDanymiAdresataOddzielonePionowymiKreskami))
             {
-                //numerWczytanejLinii = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
                 if (pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) == 1)
                     tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami;
                 else if (pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) > 1)

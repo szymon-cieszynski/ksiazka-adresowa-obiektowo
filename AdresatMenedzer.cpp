@@ -61,7 +61,6 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata()
     return adresat;
 }
 
-
 void AdresatMenedzer::wyswietlWszystkichAdresatow()
 {
 
@@ -83,13 +82,6 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
     system("pause");
 
 }
-
-/*void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
-{
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-}*/
-
-
 
 void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
 {
