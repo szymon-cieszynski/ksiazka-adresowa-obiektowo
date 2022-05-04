@@ -15,16 +15,15 @@ class AdresatMenedzer
 {
 private:
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
-
+    PlikZAdresatami plikZAdresatami;
     vector <Adresat> adresaci;
+
     void wyswietlDaneAdresata(Adresat adresat);
     Adresat podajDaneNowegoAdresata();
     int podajIdWybranegoAdresata();
     char wybierzOpcjeZMenuEdycja();
     void zaktualizujDaneWybranegoAdresata(Adresat adresat);
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
-
-    PlikZAdresatami plikZAdresatami;
 
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)

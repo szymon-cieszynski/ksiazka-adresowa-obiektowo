@@ -36,7 +36,7 @@ void KsiazkaAdresowa::wylogujUzytkownika()
     adresatMenedzer = NULL;
 }
 
-int KsiazkaAdresowa::dodajAdresata()
+void KsiazkaAdresowa::dodajAdresata()
 {
     if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
     {
