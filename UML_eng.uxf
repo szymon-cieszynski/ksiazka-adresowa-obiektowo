@@ -4,173 +4,79 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>678</x>
-      <y>36</y>
+      <x>684</x>
+      <y>18</y>
       <w>120</w>
       <h>66</h>
     </coordinates>
-    <panel_attributes>Uzytkownik
+    <panel_attributes>User
 --
 - id : Integer
 - login : String
-- haslo: String</panel_attributes>
+- password: String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>72</x>
-      <y>402</y>
+      <x>78</x>
+      <y>384</y>
       <w>246</w>
       <h>222</h>
     </coordinates>
-    <panel_attributes>KsiazkaAdresowa
+    <panel_attributes>AddressBook
 --
-- idZalogowanegoUzytkownika : Integer
-- UzytkownikMenedzer : uzytkownikMenedzer
-- NAZWA_PLIKU_Z_ADRESATAMI : constant String
-- *adresatMenedzer : AdresatMenedzer
+- idLoggedUser : Integer
+- userManager : UserManager
+- NAME_OF_FILE_WITH_CONTACTS : constant String
+- *contactManager : ContactManager
 --
-&lt;&lt;construct&gt;&gt; KsiazkaAdresowa()
-+~KsiazkaAdresowa()
-+ rejestracjaUzytkownika() : void
-+ wypiszWszystkichUzytkownikow() : void
-+ logowanieUzytkownika() : Integer
-+ wylogowanieUzytkownika() : void
-+ dodajAdresata() : void
+&lt;&lt;construct&gt;&gt; AddressBook()
++~AddressBook()
++ registrationOfUser() : void
++ showAllUsers() : void
++ logIn() : Integer
++ logOut() : void
++ addContact() : void
 
-+ wyswietlWszystkichAdresatow() : void
-+ czyUzytkownikJestZalogowany() : Bool
-+ wybierzOpcjeZMenuGlownego() : Char
-+ wybierzOpcjeZMenuUzytkownika() : Char
-+ usunAdresata() : Integer
-+ edytujAdresata() : void
-+ wyszukajAdresatowPoImieniu() : void
-+ wyszukajAdresatowPoNazwisku() : void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>336</x>
-      <y>186</y>
-      <w>306</w>
-      <h>186</h>
-    </coordinates>
-    <panel_attributes>UzytkownikMenedzer
---
-- idZalogowanegoUzytkownika : Integer
-- uzytkownicy : vector &lt;Uzytkownik&gt;
-PlikZUzytkownikami : plikZUzytkownikami
---
-- podajDaneNowegoUzytkownika() :  Uzytkownik
-- pobierzIdNowegoUzytkownika() : Integer
-- czyIstniejeLogin() : Bool
-- zmianaHaslaZalogowanegoUzytkownika() : void
-
-&lt;&lt;construct&gt;&gt; UzytkownikMenedzer()
-+ rejestracjaUzytkownika () : void
-+ logowanieUzytkownika () : Integer
-+ wypiszWszystkichUzytkownikow() : void
-+ wylogujUzytkownika() : void
-+ czyUzytkownikJestZalogowany() : Bool
-+ pobierzIdZalogowanegoUzytkownika() : Integer
-+ wybierzOpcjeZMenuGlownego() : Char
-
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>714</x>
-      <y>258</y>
-      <w>330</w>
-      <h>114</h>
-    </coordinates>
-    <panel_attributes>PlikZUzytkownikami
---
-
---
-- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : String
-- pobierzDaneUzytkownika() : Uzytkownik
-
-&lt;&lt;construct&gt;&gt; PlikZUzytkownikami()
-+ dopiszUzytkownikaDoPliku() : Void
-+ wczytajUzytkownikowZPliku() : vector &lt;Uzytkownik&gt;
-+ zapiszWszystkichUzytkownikowDoPliku : void
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>714</x>
-      <y>504</y>
-      <w>234</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>MetodyPomocnicze
---
-_+ konwerjsaIntNaString() : String_
-_+ pobierzLiczbe() : String_
-_+ konwersjaStringNaInt() : Integer_
-_+ wczytajLinie() : String_
-_+ wczytajZnak() : Char_
-_+ wczytajLiczbeCalkowita() : Integer_
-_+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>588</x>
-      <y>912</y>
-      <w>132</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>Adresat
---
-- id : Integer
-- idUzytkownika : Integer
-- imie : String
-- naziwsko : String
-- numerTelefonu : String
-- email : String
-- adres : String</panel_attributes>
++ showAllContacts() : void
++ isUserLoggedIn() : Bool
++ chooseFromMainMenu() : Char
++ chooseFromUserMenu() : Char
++ deleteContact() : Integer
++ editContact() : void
++ searchByName() : void
++ searchByLastName() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>342</x>
-      <y>612</y>
-      <w>264</w>
-      <h>210</h>
+      <y>168</y>
+      <w>306</w>
+      <h>186</h>
     </coordinates>
-    <panel_attributes>AdresatMenedzer
+    <panel_attributes>UserManager
 --
-- adresaci : vector &lt;Adresat&gt;
-- ID_ZALOGOWANEGO_UZYTKOWNIKA : constant Integer
-- plikZAdresatami : PlikZAdresatami
+- idLoggedUser : Integer
+- users : vector &lt;User&gt;
+- fileWithUsers : FileWithUsers
 --
-- podajDaneNowegoAdresata() : Adresat
-- podajIdWybranegoAdresata() : Integer
-- wybierzOpcjeZMenuEdycja() : Char
-- zaktualizujDaneWybranegoAdresata() : void
-- wyswietlDaneAdresata() : void
-- wyswietlIloscWyszukanychAdresatow() : void
+- typeDataOfNewUser() : User
+- getNewUserID() : Integer
+- isLoginExist() : Bool
+- changeOfLoggedUserPassword() : void
 
-&lt;&lt;construct&gt;&gt; AdresatMenedzer()
-+ dodajAdresata() : Integer
-+ wyswietlWszystkichAdresatow() : void
-+ wybierzOpcjeZMenuUzytkownika() : Char
-+ usunAdresata() : Integer
-+ edytujAdresata() : void
-+ wyszukajAdresatowPoImieniu() : void
-+ wyszukajAdresatowPoNazwisku() : void
+&lt;&lt;construct&gt;&gt; UserManager()
++ registrationOfUser() : void
++ logIn() : Integer
++ showAllContacts() : void
++ logOut() : void
++ isUserLoggedIn() : Bool
++ getIdOfLoggedInUser() : Integer
++ chooseFromMainMenu() : Char
+
 
 </panel_attributes>
     <additional_attributes/>
@@ -179,53 +85,147 @@ _+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
     <id>UMLClass</id>
     <coordinates>
       <x>720</x>
-      <y>660</y>
-      <w>324</w>
-      <h>186</h>
+      <y>240</y>
+      <w>330</w>
+      <h>114</h>
     </coordinates>
-    <panel_attributes>PlikZAdresatami
+    <panel_attributes>FileWithUsers
 --
-- NAZWA_TMP_PLIKU_Z_ADRESATAMI : string
-- idOstatniegoAdresata : Integer
---
-- pobierzDaneAdresata() : Adresat
-- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : int
-- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : int
-- usunPlik() : void
-- zmienNazwePliku() : coid
 
-&lt;&lt;construct&gt;&gt; PlikZAdresatami()
-+ pobierzZPlikuIdOstatniegoAdresata() : Integer
-+ dopiszAdresataDoPliku() : void
-+ wczytajAdresatowZalogowanegoUzytkownikaZPliku() vector &lt;Adresaci&gt;
-+ usunWybranegoAdresataZPliku() : void
-+ edytujWybranegoAdresataWPliku() : void
-+ zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami() : String
-+ dopisz() : void</panel_attributes>
+--
+- changeUserDataToDataSeparatedByVerticalLines() : String
+- getDataOfUSer() : User
+
+&lt;&lt;construct&gt;&gt; FileWithUsers()
++ addUserToFile() : void
++ loadUsersFromFile() : vector &lt;User&gt;
++ saveAllUsersToFile : void
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>990</x>
-      <y>504</y>
+      <x>720</x>
+      <y>486</y>
+      <w>234</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>SupportMethods
+--
+_+ conversionIntToString() : String_
+_+ getNumber() : String_
+_+ conversionStringtoInt() : Integer_
+_+ loadLine() : String_
+_+ loadCharacter() : Char_
+_+ loadInteger() : Integer_
+_+ changeFirstLetterToCapitalAndOthersToLower() : String_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>594</x>
+      <y>894</y>
+      <w>132</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Contact
+--
+- id : Integer
+- userId : Integer
+- name : String
+- lastName : String
+- phoneNumber : String
+- email : String
+- address : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>348</x>
+      <y>594</y>
+      <w>264</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>ContactManager
+--
+- contacts : vector &lt;Contact&gt;
+- ID_OF_LOGGED_USER : constant Integer
+- fileWithContacts : FileWithContacts
+--
+- typeDataOfNewUser() : User
+- typeIdChoosedContact() : Integer
+- chooseFromEditMenu() : Char
+- updateDataOfChoosedContact() : void
+- showDataOfContact() : void
+- showAmountOfSearchedContacts() : void
+
+&lt;&lt;construct&gt;&gt; ContactManager()
++ addContact() : Integer
++ showAllContacts() : void
++ chooseFromUserMenu() : Char
++ deleteContact() : Integer
++ editContact() : void
++ searchByName() : void
++ searchByLastName() : void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>726</x>
+      <y>642</y>
+      <w>324</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>FileWithContacts
+--
+- - TMP_NAME_OF_FILE_WITH_CONTACTS : String
+- idOfLastContact : Integer
+--
+- getDataOfContact() : Contact
+- getUserIdFromDataSeparatedByVerticalLines() : Integer
+- getContactIdFromDataSeparatedByVerticalLines() : Integer
+- deleteFile() : void
+- changeNameOfFile() : void
+
+&lt;&lt;construct&gt;&gt; FileWithContacts()
++ getFromFileIdOfLastContact() : Integer
++ addContactToFile() : void
++ loadContactsOfLoggedUserFromFile() : vector &lt;Contact&gt;
++ deleteChoosedContactFromFile() : void
++ editChoosedContactInFile() : void
++ changeContactDataToDataSeparatedByVerticalLines() : String
++ add() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>996</x>
+      <y>486</y>
       <w>168</w>
       <h>66</h>
     </coordinates>
-    <panel_attributes>PlikTekstowy
+    <panel_attributes>TextFile
 --
-- NAZWA_PLIKU : constant String
+- NAME_OF_FILE : constant String
 --
-&lt;&lt;construct&gt;&gt; PlikTekstowy()
-+ pobierzNazwePliku(): string
-+ czyPlikJestPusty() : bool</panel_attributes>
+&lt;&lt;construct&gt;&gt; TextFile()
++ getNameOfFile(): string
++ isFileEmpty() : bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>570</x>
-      <y>96</y>
+      <x>576</x>
+      <y>78</y>
       <w>120</w>
       <h>102</h>
     </coordinates>
@@ -235,8 +235,8 @@ _+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>780</x>
-      <y>96</y>
+      <x>786</x>
+      <y>78</y>
       <w>18</w>
       <h>174</h>
     </coordinates>
@@ -246,8 +246,8 @@ _+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>636</x>
-      <y>270</y>
+      <x>642</x>
+      <y>252</y>
       <w>90</w>
       <h>18</h>
     </coordinates>
@@ -257,8 +257,8 @@ _+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>306</y>
+      <x>276</x>
+      <y>288</y>
       <w>78</w>
       <h>108</h>
     </coordinates>
@@ -268,8 +268,8 @@ _+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>618</y>
+      <x>222</x>
+      <y>600</y>
       <w>138</w>
       <h>126</h>
     </coordinates>
@@ -279,8 +279,8 @@ _+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>588</x>
-      <y>816</y>
+      <x>594</x>
+      <y>798</y>
       <w>18</w>
       <h>108</h>
     </coordinates>
@@ -290,8 +290,8 @@ _+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>714</x>
-      <y>840</y>
+      <x>720</x>
+      <y>822</y>
       <w>102</w>
       <h>114</h>
     </coordinates>
@@ -301,8 +301,8 @@ _+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>744</y>
+      <x>606</x>
+      <y>726</y>
       <w>132</w>
       <h>18</h>
     </coordinates>
@@ -312,8 +312,8 @@ _+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>612</y>
+      <x>606</x>
+      <y>594</y>
       <w>126</w>
       <h>18</h>
     </coordinates>
@@ -323,8 +323,8 @@ _+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>588</x>
-      <y>366</y>
+      <x>594</x>
+      <y>348</y>
       <w>138</w>
       <h>156</h>
     </coordinates>
@@ -334,8 +334,8 @@ _+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>732</x>
-      <y>366</y>
+      <x>738</x>
+      <y>348</y>
       <w>18</w>
       <h>150</h>
     </coordinates>
@@ -345,8 +345,8 @@ _+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>768</x>
-      <y>618</y>
+      <x>774</x>
+      <y>600</y>
       <w>18</w>
       <h>54</h>
     </coordinates>
@@ -356,8 +356,8 @@ _+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1014</x>
-      <y>366</y>
+      <x>1020</x>
+      <y>348</y>
       <w>18</w>
       <h>150</h>
     </coordinates>
@@ -367,8 +367,8 @@ _+ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1020</x>
-      <y>564</y>
+      <x>1026</x>
+      <y>546</y>
       <w>18</w>
       <h>108</h>
     </coordinates>
